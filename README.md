@@ -1,23 +1,26 @@
-Project Title: Honeypot Deployment & ELK Stack Log Analysis
-Description
+# Cowrie Honeypot & ELK Stack Analysis
 
-This project involves the deployment of a Cowrie honeypot to capture and analyze SSH brute-force attacks. The logs are ingested into an ELK (Elasticsearch, Logstash/Filebeat, Kibana) stack, allowing for real-time visualization and security event monitoring.
-Key Features
+## Project Overview
+This project focuses on the deployment of a **Cowrie honeypot** to capture and analyze SSH brute-force attacks. The logs are collected and processed using the **ELK Stack (Elasticsearch, Filebeat, Kibana)**, enabling real-time monitoring and visualization of security events.
 
-    Honeypot Setup: Deployed and configured a Cowrie honeypot to simulate a vulnerable SSH server.
+## Key Features
+* **Honeypot Deployment:** Set up and configured Cowrie in a home lab environment to simulate a vulnerable SSH server.
+* **Automated Log Ingestion:** Utilized Filebeat to harvest, enrich, and forward honeypot logs into an Elasticsearch Data Stream.
+* **Data Visualization:** Developed a custom Kibana dashboard to visualize attacker activity, including top-attempted passwords and connection attempts.
+* **Defensive Security:** Implemented SIEM principles to monitor, audit, and analyze network-based attacks.
 
-    Log Ingestion: Used Filebeat to securely harvest and forward honeypot logs into an Elasticsearch data stream.
+## Technologies Used
+* **Honeypot:** Cowrie
+* **Logging/Ingestion:** Filebeat
+* **Data Storage/Analytics:** Elasticsearch
+* **Visualization:** Kibana
+* **Environment:** Linux (Ubuntu/Debian)
 
-    Data Visualization: Built a custom Kibana dashboard to visualize attacker activity, including login attempts and password analysis.
+## Architecture
+1. **Cowrie** captures brute-force SSH attempts and logs them in JSON format.
+2. **Filebeat** monitors the Cowrie logs and pushes them into an Elasticsearch Data Stream.
+3. **Elasticsearch** indexes the logs for fast retrieval and analysis.
+4. **Kibana** provides the interface for visualizing the attack data through custom dashboards.
 
-    Security Analysis: Implemented defensive security techniques to monitor and audit network events in a controlled home lab environment.
-
-Technologies Used
-
-    Honeypot: Cowrie
-
-    Logging: Filebeat
-
-    SIEM: Elasticsearch, Kibana (ELK Stack)
-
-    Environment: Linux-based home lab
+## Project Screenshots
+<img width="1840" height="952" alt="image" src="https://github.com/user-attachments/assets/a2be8128-b1ad-46d7-879d-50b36e9c0d95" />
